@@ -1,12 +1,42 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('./assets/fonts/NanumSquareRoundR.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('./assets/fonts/NanumSquareRoundB.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('./assets/fonts/NanumSquareRoundEB.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+body {
+  font-family: 'NanumSquareRound', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+#root {
+  width: 1487px;         /* 화면 너비 강제 고정 */
+  margin: 0 auto;        /* 가운데 정렬 */
+  padding: 2rem;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+}
 .logo {
-  height: 6em;
+  height: 10em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
@@ -39,4 +69,27 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.map-area {
+  flex-shrink: 0;
+  width: 600px;
+  transition: transform 0.5s ease;
+}
+
+.map-area.slide-left {
+  transform: translateX(-120px); /* 왼쪽으로 밀기 */
+}
+
+.chart-area {
+  flex-grow: 1;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
