@@ -1,0 +1,44 @@
+.scenario-accordion {
+    margin: 40px 0;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    font-family: 'NanumSquareRoundEB';
+    margin-bottom: 20px;
+    color: #21609E;
+  }
+  
+  .accordion-item {
+    margin-bottom: 12px;
+  }
+  
+  .accordion-header {
+    width: 100%;
+    padding: 14px 20px;
+    background-color: #dde6ed;
+    font-weight: bold;
+    font-family: 'NanumSquareRound';
+    border: none;
+    border-radius: 8px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+  }
+  
+  .accordion-body {
+    background-color: #fff;
+    padding: 16px 24px;
+    border-radius: 8px;
+    margin-top: 8px;
+    font-family: 'NanumSquareRound';
+    font-size: 15px;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  }
+  

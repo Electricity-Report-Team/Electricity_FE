@@ -1,0 +1,46 @@
+.top3-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    background-color: #f8f8f8;
+  }
+  
+  .pie-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pie {
+    width: 200px;
+    height: 200px;
+    transform: rotate(-90deg); /* 시작을 위쪽으로 */
+  }
+  
+  .pie-labels {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .top3-table {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .top3-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+  }
+  
+  .top3-table th,
+  .top3-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+  

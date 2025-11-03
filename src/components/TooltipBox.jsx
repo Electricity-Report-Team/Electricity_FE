@@ -9,21 +9,38 @@ const TooltipBox = ({ region, industries, x, y }) => {
         position: "absolute",
         top: y,
         left: x,
-        backgroundColor: "white",
-        border: "1px solid #ccc",
-        borderRadius: "8px",
-        padding: "10px",
-        boxShadow: "2px 2px 10px rgba(0,0,0,0.1)",
+        backgroundColor: "#ffffff",
+        border: "2px solid #f1c40f",
+        borderRadius: "12px",
+        padding: "16px 20px",
+        boxShadow: "4px 4px 12px rgba(0, 0, 0, 0.2)",
         zIndex: 1000,
         pointerEvents: "none",
-        minWidth: "160px",
+        minWidth: "200px",
+        fontFamily: "NanumSquareRoundB, sans-serif",
+        lineHeight: "1.8",
+        transition: "opacity 0.2s ease-in-out",
       }}
     >
-      <strong>⚡ {region} 전력 사용량 TOP 5</strong>
+      <strong
+        style={{
+          fontFamily: "NanumSquareRoundEB",
+          fontWeight: 700,
+          fontSize: "16px",
+          color: "#1A3F66",
+          display: "block",
+          marginBottom: "12px",
+        }}
+      >
+        ⚡ {region} 전력 사용량 TOP 5
+      </strong>
+
       {industries ? (
-        <ol style={{ marginTop: "5px" }}>
+        <ol style={{ margin: 0, paddingLeft: "20px", color: "#333" }}>
           {industries.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li key={index} style={{ marginBottom: "6px" }}>
+              {item}
+            </li>
           ))}
         </ol>
       ) : (

@@ -1,0 +1,43 @@
+/* src/pages/ScenarioPage.module.css */
+
+.scenario-page {
+    font-family: 'NanumSquareRoundEB', sans-serif;
+    padding-top: 60px;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  
+  .region-dropdown-fixed {
+    font-family: 'NanumSquareRoundEB', sans-serif;
+    position: fixed;
+    top: 150px;  /* 네비게이션 바 바로 밑 */
+    left: 60px; /* 화면 왼쪽 모서리와 가까이 */
+    z-index: 100;
+  }
+  
+  .region-dropdown-fixed select {
+    padding: 6px 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  .scenario-chart-title {
+    font-family: 'NanumSquareRoundEB', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #dde6ed;
+    color: #21609E;
+    display: inline-block;
+    margin: 10px auto 40px;
+  }
+
+  .chart-container {
+    border-radius: 0;              /* 꼭지점 둥글게 효과 제거 (선택) */
+    box-shadow: none;              /* ✅ 그림자 제거 */
+    background-color: transparent; /* 흰 배경도 싫다면 transparent */
+    padding: 30px;                 /* padding은 유지 or 줄이기 */
+  }
