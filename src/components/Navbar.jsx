@@ -1,14 +1,19 @@
-import React from "react";
+// src/components/Navbar.jsx
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import chatbotIcon from "../assets/ChatBot.svg";
 import CarouselText from "./CarouselText";
 
 function Navbar() {
+  const navigate = useNavigate();
+  const [showChat, setShowChat] = useState(false); // ✅ 상태 추가
+
   return (
     <header
-    style={{
-        position: "fixed", // 상단 고정
-        top: 0, // 상단부터
+      style={{
+        position: "fixed",
+        top: 0,
         left: 0,
         width: "100vw",
         backgroundColor: "#21609E",
@@ -18,46 +23,59 @@ function Navbar() {
         alignItems: "center",
         boxSizing: "border-box",
         fontFamily: "NanumSquareRound",
-        zIndex: 1000, // 다른 요소 위에 오도록
+        zIndex: 1000,
       }}
     >
-      {/* 왼쪽: 로고 + 텍스트 */}
-      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+      {/* 로고 */}
+      <div
+        onClick={() => navigate("/")}
+        style={{ display: "flex", alignItems: "center", gap: "12px", cursor: "pointer" }}
+      >
         <img src={logo} alt="로고" style={{ height: "70px" }} />
-        <h2 style={{ color: "white", fontSize: "25px", fontFamily: "NanumSquareRoundEB" }}>우리 전기 리포트</h2>
+        <h2 style={{ color: "white", fontSize: "30px", fontFamily: "NanumSquareRoundEB" }}>
+          우리 전기 리포트
+        </h2>
       </div>
 
-      {/* 가운데: 메뉴들 */}
-      <nav style={{ display: "flex", gap: "32px", color: "white", fontSize: "20px", fontFamily: "NanumSquareRoundEB" }}>
-        <span>지역 전력 소비량 분석</span>
-        <span>전력 절감 시나리오</span>
+      {/* 메뉴 */}
+      <nav
+        style={{
+          display: "flex",
+          gap: "120px",
+          color: "white",
+          fontSize: "24px",
+          fontFamily: "NanumSquareRoundEB",
+        }}
+      >
+        <span style={{ cursor: "pointer" }} onClick={() => navigate("/region-analysis")}>
+          지역 전력 소비량 분석
+        </span>
+        <span style={{ cursor: "pointer" }} onClick={() => navigate("/scenario")}>
+          전력 절감 시나리오
+        </span>
       </nav>
 
-      {/* 오른쪽: 검색창 + 챗봇 */}
+      {/* 검색 + 챗봇 */}
       <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
         <CarouselText />
-        
         <button
+          onClick={() => navigate("/chat")} 
           style={{
-            backgroundColor: "transparent", // ← 흰 배경 → 투명하게 변경
+            backgroundColor: "transparent",
             border: "none",
-            padding: "0",                   // 패딩 없애기
+            padding: "0",
             cursor: "pointer",
             display: "flex",
             alignItems: "center",
             outline: "none",
-            transition: "background-color 0.2s ease",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "transparent";
           }}
         >
-          <img src={chatbotIcon} style={{ height: "48px", marginRight: "6px"}} />
+          <img src={chatbotIcon} style={{ height: "48px", marginRight: "6px" }} alt="chatbot" />
         </button>
       </div>
+
+      {/* ✅ ChatModal은 헤더 외부에 띄우도록 렌더링 */}
+      {showChat && <ChatModal onClose={() => setShowChat(false)} />}
     </header>
   );
 }

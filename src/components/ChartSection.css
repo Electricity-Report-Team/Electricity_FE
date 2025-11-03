@@ -1,0 +1,129 @@
+.chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  /* 추가: 중앙 정렬을 위한 속성 */
+  align-items: center;           /* 내부 요소를 수평 중앙 정렬 */
+  width: 100%;
+  max-width: 1400px;             /* 전체 너무 넓어지지 않도록 제한 */
+  margin: 0 auto;                /* 부모 기준 가운데 */
+  padding: 20px;                 /* 여백 주기 */
+}
+
+.chart-card {
+  background: #ffffff;           /* 흰 배경 */
+  border-radius: 0;              /* 모서리 둥글기 제거 */
+  box-shadow: none;              /* 그림자 제거 */
+  padding: 16px 24px;
+  min-width: 500px;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'NanumSquareRound';
+  font-weight: 800;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+/* 드롭다운 공통 스타일 */
+.chart-header select {
+  font-family: 'NanumSquareRound';
+  font-weight: 700;
+  font-size: 15px;
+  padding: 4px 28px 4px 10px; /* 오른쪽 패딩을 넓힘 */
+  border: 1px solid #999;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #1A3F66;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%231A3F66' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 10px 6px;
+  cursor: pointer;
+}
+
+/* disabled 상태에서도 불투명하지 않게 */
+.chart-header select:disabled {
+  opacity: 1;
+  color: #1A3F66;
+  cursor: default;
+}
+
+.more-btn {
+  background: none;
+  border: none;
+  color: #444;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.tab-menu {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-family: 'NanumSquareRoundEB';
+}
+
+.tab-menu button {
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 6px 8px;
+  color: #666;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-menu .active {
+  color: #1A3F66;
+  border-bottom: 2px solid #1A3F66;
+}
+
+.chart-box {
+  height: 250px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  /* 여기에 chart 컴포넌트 들어감 */
+}
+
+.detail-link {
+  text-align: right;
+  margin-top: 12px;
+  font-size: 15px;
+  color: #1A3F66;
+  cursor: pointer;
+}
+.chart-header {
+  position: relative;
+  margin-bottom: 12px;
+  height: 52px;
+}
+
+.left-controls {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.chart-title {
+  font-family: "NanumSquareRoundEB";
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 15px;
+}
+

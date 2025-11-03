@@ -5,8 +5,8 @@
 		<style type="text/css">
     .land {
       fill: #cccccc;
-      stroke: white;
-      stroke-width: 0.5;
+      stroke: #23374D;
+      stroke-width: 1;
       cursor: pointer;
       transition: fill 0.3s;
     }
@@ -75,54 +75,54 @@
 	
 
     <circle cx="153.79973134328358" cy="291.08852238805974" r="4" fill="#23374D"/>
-    <text x="158.79973134328358" y="286.08852238805974" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">서울</text>
+    <text x="158.79973134328358" y="286.08852238805974" font-size="15" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">서울</text>
     
     <circle cx="353.8895" cy="560.1265" r="4" fill="#23374D"/>
-    <text x="358.8895" y="555.1265" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">부산</text>
+    <text x="340.8895" y="550.1265" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">부산</text>
     
     <circle cx="297.0623859649124" cy="501.0659298245614" r="4" fill="#23374D"/>
-    <text x="302.0623859649124" y="496.0659298245614" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">대구</text>
+    <text x="302.0623859649124" y="496.0659298245614" font-size="15" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">대구</text>
     
     <circle cx="125.10900000000001" cy="295.63675" r="4" fill="#23374D"/>
-    <text x="95.10900000000001" y="285.63675" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">인천</text>
+    <text x="110.10900000000001" y="285.63675" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">인천</text>
     
     <circle cx="141.2245757575758" cy="568.813787878788" r="4" fill="#23374D"/>
-    <text x="146.2245757575758" y="563.813787878788" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">광주</text>
+    <text x="146.2245757575758" y="563.813787878788" font-size="15" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">광주</text>
     
     <circle cx="192.2139677419355" cy="432.29543548387096" r="4" fill="#23374D"/>
-    <text x="197.2139677419355" y="427.29543548387096" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">대전</text>
+    <text x="197.2139677419355" y="427.29543548387096" font-size="15" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">대전</text>
     
     <circle cx="369.53268831168833" cy="529.6321948051949" r="4" fill="#23374D"/>
-    <text x="374.53268831168833" y="524.6321948051949" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">울산</text>
+    <text x="355.53268831168833" y="517.6321948051949" font-size="15" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">울산</text>
     
     <circle cx="140.8166666666664" cy="260.4475" r="4" fill="#23374D"/>
     <text x="145.166666666664" y="255.4475" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">경기</text>
     
     <circle cx="269.141652956298" cy="277.80234190231363" r="4" fill="#23374D"/>
-    <text x="274.141652956298" y="272.80234190231363" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">강원</text>
+    <text x="274.141652956298" y="272.80234190231363" font-size="15" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">강원</text>
     
     <circle cx="240.24684318181798" cy="372.3669772727275" r="4" fill="#23374D"/>
-    <text x="245.24684318181798" y="367.3669772727275" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">충북</text>
+    <text x="245.24684318181798" y="367.3669772727275" font-size="15" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">충북</text>
     
     <circle cx="120.34566666666665" cy="393.7283333333333" r="4" fill="#23374D"/>
-    <text x="125.34566666666665" y="388.7283333333333" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound"> 충남</text>
+    <text x="125.34566666666665" y="388.7283333333333" font-size="15" font-weight="bold" fill="#23374D" font-family="NanumSquareRound"> 충남</text>
     
     <circle cx="159.73163402061869" cy="510.6606314432993" r="4" fill="#23374D"/>
-    <text x="164.73163402061869" y="505.6606314432993" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">전북</text>
+    <text x="164.73163402061869" y="505.6606314432993" font-size="15" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">전북</text>
     
     <circle cx="127.44178666666669" cy="610.0013999999999" r="4" fill="#23374D"/>
-    <text x="132.4417866666667" y="605.0013999999999" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">전남</text>
+    <text x="132.4417866666667" y="605.0013999999999" font-size="15" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">전남</text>
     
     <circle cx="300.4802857142856" cy="400.2359285714286" r="4" fill="#23374D"/>
-    <text x="305.4802857142856" y="405.2359285714286" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">경북</text>
+    <text x="305.4802857142856" y="405.2359285714286" font-size="15" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">경북</text>
     
     <circle cx="278.46227272727265" cy="565.2427727272728" r="4" fill="#23374D"/>
-    <text x="283.46227272727265" y="560.2427727272728" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">경남</text>
+    <text x="283.46227272727265" y="560.2427727272728" font-size="15" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">경남</text>
     
-    <circle cx="132.536" cy="763.765" r="4" fill="#23374D"/>
-    <text x="137.536" y="758.765" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">제주</text>
+    <circle cx="95.536" cy="772.765" r="4" fill="#23374D"/>
+    <text x="100.536" y="767.765" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">제주</text>
     
     <circle cx="177.11095744680847" cy="412.1581489361702" r="4" fill="#23374D"/>
-    <text x="182.11095744680847" y="407.1581489361702" font-size="14" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">세종</text>
+    <text x="182.11095744680847" y="407.1581489361702" font-size="15" font-weight="bold" fill="#23374D" font-family="NanumSquareRound">세종</text>
     </g>
 </svg>

@@ -1,0 +1,66 @@
+.container {
+    margin-top: 100px;
+    padding: 20px;
+    text-align: center;
+    padding-bottom: 220px;
+    padding-top: 70px;
+  }
+  
+  .cause-title {
+    font-family: 'NanumSquareRoundEB', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #dde6ed;
+    color: #21609E;
+    display: inline-block;
+    margin: 40px auto;
+    margin-bottom: 100px;
+  }
+  
+  .cardWrapper {
+    display: flex;
+    justify-content: center; /* 가운데 정렬 */
+    gap: 60px;               /* 카드 사이 간격 */
+    padding: 0 60px;         /* 좌우 여백 */
+    max-width: 1400px;       /* 전체 폭 제한 (너무 넓어지지 않게) */
+    margin: 0 auto;          /* 중앙 정렬 */
+    flex-wrap: nowrap;       /* 한 줄 유지 */
+  }
+  
+  .card {
+    flex: 1 1 0;             /* 동일한 비율로 너비 차지 */
+    min-width: 300px;        /* 최소 너비 */
+    max-width: 400px;        /* 최대 너비 제한 */
+    padding: 40px 30px;
+    background-color: #f9f9f9;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+    .card:hover {
+        transform: scale(1.03);
+      }
+      
+      .image {
+        width: 215px;
+        height: 215px;
+        object-fit: contain;
+        margin-bottom: 20px;
+      }
+      
+      .card h3 {
+        font-size: 26px;
+        font-weight: 800;
+        margin-bottom: 16px;
+        color: #1a1a1a;
+      }
+      
+      .cause {
+        font-size: 22px;
+        color: #333;
+        line-height: 1.6;
+      }

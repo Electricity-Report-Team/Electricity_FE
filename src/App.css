@@ -80,16 +80,42 @@ body {
 
 .map-area {
   flex-shrink: 0;
-  width: 600px;
+  width: 1487px;
   transition: transform 0.5s ease;
 }
 
 .map-area.slide-left {
-  transform: translateX(-120px); /* 왼쪽으로 밀기 */
+  transform: translateX(-30x); /* 왼쪽으로 밀기 */
+  width: 1000px;
 }
 
 .chart-area {
-  flex-grow: 1;
-  opacity: 1;
-  transition: opacity 0.5s ease;
+  width: 1000px;         /* ✅ 원하는 그래프 너비 */
+  height: 1000px;
+  max-width: 100%;       /* 반응형 안정성 */
+  padding-top: 15px;
+}
+
+.chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* 카드 가로 너비 고정 */
+  max-width: 1000px; 
+  width: 100%;
+  height: 1000px;
+  max-width: none;
+  
+  padding: 32px 24px;
+  border-radius: 12px; 
+}
+.chart-card {
+  background-color: #eeeeee;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 16px 24px;
+  width: 100%;              /* 너비를 부모에 맞게 */
+  box-sizing: border-box;   /* 패딩 포함 */
+}
+.chart-box {
+  height: 400px;       /* ✅ 그래프 높이 넓힘 */
 }

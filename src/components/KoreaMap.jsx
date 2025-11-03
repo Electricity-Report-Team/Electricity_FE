@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import TooltipBox from "./TooltipBox";
 import "./KoreaMap.css";
 
-const KoreaMap = () => {
+const KoreaMap = ({ onRegionClick , selectedRegion}) => {
   const svgRef = useRef(null);
   const [tooltipInfo, setTooltipInfo] = useState({ region: null, x: 0, y: 0 });
   const [top5Data, setTop5Data] = useState(null); // ← top5 데이터 상태 추가
@@ -40,12 +40,11 @@ const KoreaMap = () => {
             path.getAttribute("title") ||
             path.getAttribute("aria-label") ||
             path.getAttribute("id");
-  
-          if (!regionName) return;
-  
-          path.style.cursor = "pointer";
-          path.style.fill = "#CCCCCC";
-          path.style.transition = "fill 0.3s ease";
+
+            const isSelected = selectedRegion?.regionName === regionName;
+            path.style.cursor = "pointer";
+            path.style.fill = isSelected ? "#21609E" : "#CCCCCC";
+            path.style.transition = "fill 0.3s ease";
   
           // 연결된 텍스트와 점 찾기
           const relatedText = [...texts].find((t) =>
@@ -68,22 +67,25 @@ const KoreaMap = () => {
   
           // 마우스 오버
           path.addEventListener("mouseenter", (e) => {
-            path.style.fill = "#1A3F66";
+            path.style.fill = "#21609E";
   
-            if (relatedText) relatedText.setAttribute("fill", "#FFFFFF");
+            if (relatedText) relatedText.setAttribute("fill", "#ffffff");
             if (relatedCircle) relatedCircle.setAttribute("fill", "#FFFFFF");
   
-            const { clientX, clientY } = e;
+            const svgRect = svgRef.current.getBoundingClientRect();
+            const adjustedX = e.clientX - svgRect.left - 50;
+            const adjustedY = e.clientY - svgRect.top + 10;
             setTooltipInfo({
               region: regionName,
-              x: clientX + 10,
-              y: clientY + 10,
+              x: adjustedX,
+              y: adjustedY
             });
             const regionId = regionNameToId[regionName];
             if (regionId) {
               fetch(`/api/v1/regions/${regionId}/top5`)
                 .then((res) => res.json())
                 .then((data) => {
+                  console.log("백엔드 응답:", data);
                   setTop5Data(data);
                 })
                 .catch((err) => {
@@ -97,17 +99,25 @@ const KoreaMap = () => {
   
           // 마우스 아웃
           path.addEventListener("mouseleave", () => {
-            path.style.fill = "#CCCCCC";
-  
-            if (relatedText) relatedText.setAttribute("fill", "#1A3F66");
-            if (relatedCircle) relatedCircle.setAttribute("fill", "#1A3F66");
-  
+            const isStillSelected = selectedRegion?.regionName === regionName;
+            path.style.fill = isStillSelected ? "#21609E" : "#CCCCCC";
+          
+            if (relatedText) relatedText.setAttribute("fill", "#23374D"); 
+            if (relatedCircle) relatedCircle.setAttribute("fill", "#23374D");
+          
             setTooltipInfo({ region: null, x: 0, y: 0 });
-            
+          });
+          path.addEventListener("click", () => {
+            if (onRegionClick) {
+              const regionId = regionNameToId[regionName];
+              if (regionId) {
+                onRegionClick({ id: regionId, name: regionName }); // ✅ 객체 전달
+              }
+            }
           });
         });
       });
-  }, []);
+  }, [selectedRegion]);
   
   
   
@@ -116,13 +126,19 @@ const KoreaMap = () => {
   return (
     <div
   className="map-wrapper"
-  style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+  style={{ display: "flex", flexDirection: "column", alignItems: "center",
+  position: "relative" }}
 >
   {/* 지도 SVG */}
   <div className="svg-container" ref={svgRef} />
 
   {/* 툴팁 */}
-  <TooltipBox {...tooltipInfo} />
+  <TooltipBox
+  region={tooltipInfo.region}
+  x={tooltipInfo.x}
+  y={tooltipInfo.y}
+  industries={top5Data?.top5Industries}
+/>
 
   {/* 👇 추가 문구 (지도 아래에 표시됨) */}
   <p
